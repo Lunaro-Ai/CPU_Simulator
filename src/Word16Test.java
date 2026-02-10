@@ -107,11 +107,17 @@ class Word16Test {
         Word16 result = new Word16();
         fw.not(result);
         assertTrue(tw.equals(result));
+
         tw.not(result);
         assertTrue(fw.equals(result));
+
         sw.not(result);
         assertTrue(sw2.equals(result));
         sw2.not(result);
         assertTrue(sw.equals(result));
+
+
+
+
     }
 }

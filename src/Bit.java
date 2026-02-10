@@ -23,16 +23,10 @@ public class Bit {
     }
 
     public static void and(Bit b1, Bit b2, Bit result) {
-        if (!b1.getValue()) {
-            result.assign(false);
-        } else if (!b2.getValue()) {
-            result.assign(false);
-        } else {
-            result.assign(true);
-        }
-
-
-
+        if (b1.getValue()) {
+            if (b2.getValue()) result.assign(true);
+            else result.assign(false);
+        } else result.assign(false);
     }
 
     public void or(Bit b2, Bit result) {
@@ -40,21 +34,11 @@ public class Bit {
     }
 
     public static void or(Bit b1, Bit b2, Bit result) {
-
-        if (!b1.getValue()) {
-            if (!b2.getValue()) {
-                result.assign(false);
-            } else result.assign(true);
+        if (b1.getValue()) result.assign(true);
+        else if (b2.getValue()) {
+            result.assign(true);
         }
-        else if (!b2.getValue()) {
-            if (!b1.getValue()) {
-                result.assign(false);
-            } else result.assign(true);
-        }
-        else result.assign(true);
-
-
-
+        else result.assign(false);
     }
 
     public void xor(Bit b2, Bit result) {
@@ -63,11 +47,11 @@ public class Bit {
 
     public static void xor(Bit b1, Bit b2, Bit result) {
         result.assign(b1.getValue() != b2.getValue());
-
     }
 
     public static void not(Bit b2, Bit result) {
-        result.assign(!b2.getValue());
+        if (b2.getValue()) result.assign(false);
+        else result.assign(true);
     }
 
     public void not(Bit result) {

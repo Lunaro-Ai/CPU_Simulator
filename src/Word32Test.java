@@ -149,7 +149,17 @@ class Word32Test {
                 f,f,f,f, f,f,f,f, f,f,f,f, f,f,f,f,
                 t,t,t,t, t,t,t,t, t,t,t,t, t,t,t,t,
         });
+        Word32 word32 = new Word32(new Bit[]{
+                f,f,f,f, f,f,f,f, f,f,f,f, f,f,f,f,
+                t,t,t,t, t,t,t,t, t,t,t,t, f,f,t,f,
+        });
         Word16 result = new Word16();
+        // My test
+        word32.getBottomHalf(result);
+        assertTrue(result.equals(new Word16( new Bit[]{ t, t, t, t, t, t, t, t, t, t, t, t, f, f, t, f, } )));
+        // My test
+
+
         top.getBottomHalf(result);
         assertTrue(result.equals(new Word16( new Bit[]{ f, f, f, f, f, f, f, f, f, f, f, f, f, f, f, f, } )));
         opposite.getBottomHalf(result);
