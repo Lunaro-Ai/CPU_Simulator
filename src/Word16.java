@@ -22,7 +22,7 @@ public class Word16 {
     }
 
 
-    public void setBitN(int n, Bit source) {// sets the nth bit of this word to "source"
+    public void setBitN(int n, Bit source) { // sets the nth bit of this word to "source"
         this.bits[n].assign(source.getValue());
     }
 

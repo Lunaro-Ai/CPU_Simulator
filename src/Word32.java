@@ -22,7 +22,6 @@ public class Word32 {
     }
 
     public void getBottomHalf(Word16 result) { // sets result = bits 16-31 of this word. use bit.assign
-        // fix this!!!!
         int index = 16;
         for (int i = 0; i < 16; i++) {
             result.setBitN(i,bits[index++]);
