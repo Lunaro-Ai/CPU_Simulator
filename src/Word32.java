@@ -39,7 +39,7 @@ public class Word32 {
     }
 
     public static boolean equals(Word32 a, Word32 b) {
-        for (int i = 0; i < 31; i++) {
+        for (int i = 0; i < 32; i++) {
             if (a.bits[i].getValue() != b.bits[i].getValue()) {
                 return false;
             }
@@ -60,7 +60,7 @@ public class Word32 {
     }
 
     public static void and(Word32 a, Word32 b, Word32 result) {
-        for (int i = 0; i < 31; i++) {
+        for (int i = 0; i < 32; i++) {
             a.bits[i].and(b.bits[i],result.bits[i]);
         }
     }
@@ -70,7 +70,7 @@ public class Word32 {
     }
 
     public static void or(Word32 a, Word32 b, Word32 result) {
-        for (int i = 0; i < 31; i++) {
+        for (int i = 0; i < 32; i++) {
             a.bits[i].or(b.bits[i],result.bits[i]);
         }
     }
@@ -80,7 +80,7 @@ public class Word32 {
     }
 
     public static void xor(Word32 a, Word32 b, Word32 result) {
-        for (int i = 0; i < 31; i++) {
+        for (int i = 0; i < 32; i++) {
             a.bits[i].xor(b.bits[i],result.bits[i]);
         }
     }
@@ -90,7 +90,7 @@ public class Word32 {
     }
 
     public static void not(Word32 a, Word32 result) {
-        for (int i = 0; i < 31; i++) {
+        for (int i = 0; i < 32; i++) {
             a.bits[i].not(result.bits[i]);
         }
 
@@ -103,9 +103,6 @@ public class Word32 {
             sb.append(bit.toString());
             sb.append(",");
         }
-
         return sb.toString();
     }
-
-
 }

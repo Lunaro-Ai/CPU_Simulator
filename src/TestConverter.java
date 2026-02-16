@@ -1,6 +1,9 @@
 public class TestConverter {
 
 
+    /*
+    Takes an integer and returns a binary representation
+     */
     public static void fromInt(int value, Word32 result) {
 
        Bit t= new Bit(true);
@@ -23,8 +26,11 @@ public class TestConverter {
     }
 
 
-
-
+    /**
+     * Takes a binary number and returns an integer
+     * @param value
+     * @return
+     */
     public static int toInt(Word32 value) {
         // takes care of signed words
         var isNeg = new Bit(false);
@@ -39,8 +45,6 @@ public class TestConverter {
         else {
             value.and(value,positive); // copy
         }
-
-        // retval is an accumulato. If the bit is on we add the value of the current place bit to retval
         int val = 1, retVal=0;
         Bit cur = new Bit(true);
         for (int i = 31; i > 0; i--) {
