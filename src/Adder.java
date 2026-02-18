@@ -18,14 +18,14 @@ public class Adder {
     }
 
     public static void add(Word32 a, Word32 b, Word32 result) {
-        Bit currA,currB,sumBit,carryIn;
+        Bit currA,currB,carryIn;
         currA = new Bit(false);
         currB = new Bit(false);
         carryIn = new Bit(false);
         for (int i = 31; i >= 0; i--) {
             a.getBitN(i,currA);
             b.getBitN(i,currB);
-            sumBit = sum(currA,currB,carryIn);
+            Bit sumBit = sum(currA,currB,carryIn);
             result.setBitN(i,sumBit);
             carryIn = carryOut(currA,currB,carryIn);
         }
