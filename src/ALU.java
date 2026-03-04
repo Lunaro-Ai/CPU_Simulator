@@ -6,5 +6,8 @@ public class ALU {
     public Bit less = new Bit(false);
     public Bit equal = new Bit(false);
 
-    public void doInstruction(){}
+    public void doInstruction(){
+
+
+    }
 }

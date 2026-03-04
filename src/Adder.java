@@ -1,11 +1,7 @@
 /*
 Rippler adder
  */
-
-
 public class Adder {
-
-
 
     public static void subtract(Word32 a, Word32 b, Word32 result) {
         Word32 negation = new Word32();
@@ -31,25 +27,24 @@ public class Adder {
         }
     }
 
-
     public static Bit sum(Bit a, Bit b, Bit carryIn) {
-        Bit temp = new Bit(false);
+        Bit result = new Bit(false);
         Bit sum = new Bit(false);
-        a.xor(b,temp);
-        temp.xor(carryIn,sum);
+        a.xor(b,result);
+        result.xor(carryIn,sum);
         return sum;
     }
 
     public static Bit carryOut(Bit a, Bit b,Bit carryIn) {
-        Bit t1,t2,t3,carryOut;
-        t1 = new Bit(false);
-        t2 = new Bit(false);
-        t3 = new Bit(false);
+        Bit r1, r2, r3,carryOut;
+        r1 = new Bit(false);
+        r2 = new Bit(false);
+        r3 = new Bit(false);
         carryOut = new Bit(false);
-        a.and(b,t1);
-        a.xor(b,t2);
-        t2.and(carryIn,t3);
-        t1.or(t3,carryOut);
+        a.and(b, r1);
+        a.xor(b, r2);
+        r2.and(carryIn, r3);
+        r1.or(r3,carryOut);
         return carryOut;
     }
 }
